@@ -1,0 +1,22 @@
+.header__inner {
+    background: #FFFFFF;
+    width: 1, 512px;
+    height: 53px;
+    padding: 10px 20px 10px 20px;
+    gap: 10px;
+    border: 0px 0px 1px 0px;
+    opacity: 0px;
+    border-bottom: 1px solid #F4F4F4
+}
+
+.header__logo {
+    color: #F5C800;
+    font-family: jsMath-cmti10;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 32.73px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
