@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Requests\FruitsRequest;
 use App\Models\Product;
@@ -13,7 +13,8 @@ class FruitsController extends Controller
 {
     public function index()
     {
-        $products = Product::Paginate(6)->withPath('/products');
+        $perPage = 6;
+        $products = Product::paginate($perPage);
 
 
         return view('index', compact('products'));
@@ -31,11 +32,9 @@ class FruitsController extends Controller
     public function search(Request $request)
     {
       $keyword = $request->input('keyword');
-      $priceOrder = $request->input('product_id');
+      $product = Product::nameSearch($keyword)->first();
 
-      $products = Product::query()->nameSearch($keyword)->priceOrder($priceOrder)->get();
-
-        return view('search', compact('products'));
+        return view('search', compact('product'));
     }
 
     
@@ -50,4 +49,34 @@ class FruitsController extends Controller
     }
 
 
+    public function update()
+    {
+
+    }
+
+
+    public function delete($productId)
+    {
+        $product = Product::findOrFail($productId);
+        $product->delete();
+
+        return redirect()->route('index');
+    }
+
+    public function store(FruitsRequest $request)
+    {
+      if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('public/images');
+      }
+
+      Product::create([
+        'name' => $request->name,
+        'price' => $request->price,
+        'season' => json_encode($request->season),
+        'image' => $imagePath,
+        'description' => $request->description,
+      ]);
+
+        return redirect()->route('index');
+    }
 }

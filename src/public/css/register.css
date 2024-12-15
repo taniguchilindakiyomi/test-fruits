@@ -1,0 +1,53 @@
+.header__inner {
+    background: #FFFFFF;
+    width: 1512px;
+    height: 53px;
+    padding: 10px 20px 10px 20px;
+    gap: 10px;
+    border: 0px 0px 1px 0px;
+    opacity: 0px;
+    border-bottom: 1px solid #F4F4F4
+}
+
+.header__logo {
+    color: #F5C800;
+    font-family: jsMath-cmti10;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 32.73px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.section-container {
+    background: #F8F8F8;
+    width: 1512px;
+    height: 930px;
+    padding: 70px 376px 70px 376px;
+    gap: 40px;
+    opacity: 0px;
+}
+
+.h1 {
+    color: #333333;
+    font-family: Hiragino Kaku Gothic Pro;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 128px;
+    height: 48px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.section-container {
+    width: 760px;
+    height: 702px;
+    gap: 30px;
+    opacity: 0px;
+}

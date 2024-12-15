@@ -17,10 +17,12 @@ class Product extends Model
         return $this->belongsToMany(Season::class);
     }
 
-    public function scopeNameSearch(Builder $query, $keyword)
+
+
+    public function scopeNameSearch($query, $keyword)
     {
-        if (!empty ($keyword)) {
-            return $query->where('name', 'like', '%' . $keyword . '%');
+        if (!empty($keyword)) {
+         return $query->where('name', 'like', '%' . $keyword . '%');
         }
         return $query;
     }

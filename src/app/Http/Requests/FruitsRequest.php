@@ -25,10 +25,10 @@ class FruitsRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'price' => ['required', 'integer', 'min:0', 'max:1000'],
+            'price' => ['required', 'integer', 'min:0', 'max:10000'],
             'season' => ['required'],
             'description' => ['required', 'string', 'max:120'],
-            'image' => ['required', 'file', 'mimes:png,jpeg', 'max:255'],
+            'image' => ['required', 'file', 'mimes:png,jpeg'],
         ];
     }
 
@@ -45,7 +45,7 @@ class FruitsRequest extends FormRequest
             'description.required' => '商品説明を入力してください',
             'description.max' => '120文字以内で入力してください',
             'image.required' => '商品画像を登録してください',
-            'image.mimas' => '「.png」または「.jpeg」形式でアップロードしてください',
+            'image.mimes' => '「.png」または「.jpeg」形式でアップロードしてください',
 
         ];
 

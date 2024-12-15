@@ -1,6 +1,6 @@
 .header__inner {
     background: #FFFFFF;
-    width: 1,512px;
+    width: 1512px;
     height: 53px;
     padding: 10px 20px 10px 20px;
     gap: 10px;
@@ -23,22 +23,19 @@
 
 .product_list {
     background: #F8F8F8;
-    width: 1,512px;
-    height: 1,000px;
+    width: 1512px;
+    height: 1000px;
     padding: 70px 0px 70px 0px;
     gap: 20px;
     opacity: 0px;
 }
 
 .section-container {
-    width: 1,512px;
+    width: 1512px;
     height: 50px;
     padding: 0px 40px 0px 40px;
     gap: 1167px;
     opacity: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 h1 {
@@ -85,7 +82,7 @@ h1 {
 }
 
 .form {
-    width: 1, 512px;
+    width: 1512px;
     height: 790px;
     padding: 0px 40px 0px 40px;
     gap: 30px;
@@ -127,20 +124,20 @@ h1 {
 }
 
 .table-container {
-    width: 1,162px;
+    width: 1162px;
     height: 790px;
     gap: 40px;
     opacity: 0px;
 }
 
 .product-table {
-    width: 1,162px;
+    width: 1162px;
     height: 720px;
     gap: 20px;
     opacity: 0px;
 }
 .row {
-    width: 1,162px;
+    width: 1162px;
     height: 350px;
     gap: 20px;
     opacity: 0px;

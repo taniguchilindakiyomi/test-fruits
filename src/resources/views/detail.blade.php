@@ -20,24 +20,45 @@
     <main>
         <div class="container">
     @if($product)
+    <form class=""></form>
     <table>
         <tr>
             <td>
      <img class="product-image__img" src="{{ asset($product->image) }}" alt="{{ $product->name }}">
+     <p class="">
+        <input type="file" name="image" placeholder="ファイルを選択">
+     </p>
             </td>
             <td>
     <p>{{ $product->name }}</p>
-            </td>
-            <td>
     <p>価格: ¥{{ number_format($product->price) }}</p>
             </td>
-    <p>{{ $product->description }}</p>
     @else
     <p>商品が見つかりませんでした。</p>
     @endif
         </tr>
     </table>
         </div>
-        <form action=""></form>
+        <form class="description-form">
+            <textarea name="description" cols="100"  rows="10" placeholder="商品の説明を入力">{{ $product->description }}</textarea>
+        </form>
+        <form class="return-form" action="{{ route('products.index') }}" method="get">
+            <div class="return-form__button">
+                <button class="return-form__button-submit" type="submit">戻る</button>
+            </div>
+        </form>
+        <form class="update-form" action="/products/{:productId}/update" method="post">
+            @csrf
+            @method('PATCH')
+            <div class="update-form__button">
+                <button class="update-form__button-submit">変更を保存</button>
+            </div>
+        </form>
+        <form class="delete-form" action="{{ route('products.delete', ['productId' => $product->id]) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <div>
+            </div>
+        </form>
     </main>
 </body>
